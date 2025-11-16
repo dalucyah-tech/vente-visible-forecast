@@ -21,8 +21,13 @@
     </form>
 
     {% if forecast %}
-        <h2>Résultats :</h2>
-        <pre>{{ forecast }}</pre>
-    {% endif %}
+  <h2>Résultats :</h2>
+  <ul>
+    <li>Prévision mois 1 : {{ forecast["next_month_1"] }} €</li>
+    <li>Prévision mois 2 : {{ forecast["next_month_2"] }} €</li>
+    <li>Prévision mois 3 : {{ forecast["next_month_3"] }} €</li>
+  </ul>
+{% endif %}
+
 </body>
 </html>
