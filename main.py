@@ -71,3 +71,6 @@ async def submit_form(request: Request,
         "request": request,
         "forecast": forecast
     })
+@app.get("/form", response_class=HTMLResponse)
+def get_form(request: Request):
+    return templates.TemplateResponse("form.html", {"request": request})
