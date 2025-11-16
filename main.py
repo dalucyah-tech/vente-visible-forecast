@@ -5,6 +5,10 @@ import numpy as np
 
 app = FastAPI()
 
+@app.get("/")
+def home():
+    return {"message": "Bienvenue sur l'API Vente Visible Forecast"}
+
 class Sale(BaseModel):
     date: str
     amount: float
