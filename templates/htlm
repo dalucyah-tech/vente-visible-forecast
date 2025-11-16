@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prévisions de ventes</title>
+</head>
+<body>
+    <h1>Formulaire de prévision des ventes</h1>
+    <form method="post" action="/form">
+        <label>Date 1 :</label>
+        <input type="text" name="date1" required><br>
+
+        <label>Montant 1 :</label>
+        <input type="number" step="0.01" name="amount1" required><br>
+
+        <label>Date 2 :</label>
+        <input type="text" name="date2" required><br>
+
+        <label>Montant 2 :</label>
+        <input type="number" step="0.01" name="amount2" required><br>
+
+        <label>Date 3 :</label>
+        <input type="text" name="date3" required><br>
+
+        <label>Montant 3 :</label>
+        <input type="number" step="0.01" name="amount3" required><br>
+
+        <button type="submit">Prédire</button>
+    </form>
+
+    {% if forecast %}
+        <h2>Prévisions :</h2>
+        <ul>
+            <li>Mois 1 : {{ forecast.next_month_1 }}</li>
+            <li>Mois 2 : {{ forecast.next_month_2 }}</li>
+            <li>Mois 3 : {{ forecast.next_month_3 }}</li>
+        </ul>
+    {% endif %}
+</body>
+</html>
