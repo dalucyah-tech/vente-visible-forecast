@@ -67,10 +67,12 @@ async def submit_form(request: Request,
         "next_month_3": round(avg * 1.15, 2),
     }
 
-    return templates.TemplateResponse("form.html", {
-        "request": request,
-        "forecast": forecast
-    })
+    clean_forecast = {k: float(v) for k, v in forecast.items()}
+return templates.TemplateResponse("form.html", {
+    "request": request,
+    "forecast": clean_forecast
+})
+
 @app.get("/form", response_class=HTMLResponse)
 def get_form(request: Request):
     return templates.TemplateResponse("form.html", {"request": request})
