@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Prévision des ventes</title>
+</head>
+<body>
+    <h1>Prévision des ventes</h1>
+    <form action="/submit" method="post">
+        <label>Date 1: <input type="date" name="date1" required></label><br>
+        <label>Montant 1: <input type="number" name="amount1" step="0.01" required></label><br><br>
+
+        <label>Date 2: <input type="date" name="date2" required></label><br>
+        <label>Montant 2: <input type="number" name="amount2" step="0.01" required></label><br><br>
+
+        <label>Date 3: <input type="date" name="date3" required></label><br>
+        <label>Montant 3: <input type="number" name="amount3" step="0.01" required></label><br><br>
+
+        <button type="submit">Envoyer</button>
+    </form>
+
+    {% if forecast %}
+        <h2>Résultats :</h2>
+        <pre>{{ forecast }}</pre>
+    {% endif %}
+</body>
+</html>
