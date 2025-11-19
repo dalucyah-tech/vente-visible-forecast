@@ -68,9 +68,12 @@ async def submit_form(request: Request,
     }
 
     clean_forecast = {k: float(v) for k, v in forecast.items()}
+clean_forecast = {k: float(v) for k, v in forecast.items()}
 return templates.TemplateResponse("form.html", {
     "request": request,
     "forecast": clean_forecast
+})
+
 })
 
 @app.get("/form", response_class=HTMLResponse)
